@@ -52,6 +52,16 @@ source ~/.claude/venv/bin/activate  # Windows: ~/.claude/venv\Scripts\activate
 pip install pymupdf4llm
 ```
 
+## 업데이트 방법
+
+GitHub에 새로운 버전이 릴리스되면, Claude Code에서 다음 명령어로 업데이트하세요:
+
+```
+/plugin update pdf-to-md
+```
+
+업데이트 후 Claude Code를 재시작해야 변경사항이 적용됩니다.
+
 ## 사용 방법
 
 Claude Code에서 다음과 같이 요청하면 자동으로 스킬이 실행됩니다:
