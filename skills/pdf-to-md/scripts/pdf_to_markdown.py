@@ -9,6 +9,27 @@ PDF to Markdown Converter
 import sys
 import os
 from pathlib import Path
+import re
+
+def clean_markdown_text(text):
+    """마크다운 텍스트에서 불필요한 OCR 아티팩트를 제거합니다."""
+    lines = text.split('\n')
+    cleaned_lines = []
+    skip_until_marker = False
+
+    for line in lines:
+        # Start/End 마커 제거
+        if '----- Start of picture text -----' in line or '----- End of picture text -----' in line:
+            continue
+
+        # 다른 불필요한 패턴들도 제거 (필요시 추가)
+        # 예: 이미지 설명 텍스트, 페이지 번호 등
+        if re.match(r'^\s*-+\s*(Start|End)\s+of\s+\w+\s*-+\s*$', line):
+            continue
+
+        cleaned_lines.append(line)
+
+    return '\n'.join(cleaned_lines)
 
 def check_dependencies():
     """필요한 라이브러리가 있는지 확인하고 적절한 것을 반환합니다."""
@@ -71,6 +92,9 @@ def convert_with_pymupdf4llm(pdf_path, md_path, extract_images=False):
             # 텍스트만 추출
             md_text = pymupdf4llm.to_markdown(pdf_path)
             images_dir = None
+
+        # 불필요한 텍스트 제거 (OCR 아티팩트 등)
+        md_text = clean_markdown_text(md_text)
 
         with open(md_path, 'w', encoding='utf-8') as f:
             f.write(md_text)
