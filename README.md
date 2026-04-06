@@ -14,16 +14,21 @@ Claude Code용 PDF를 Markdown으로 변환하는 스킬입니다. PDF 문서의
 
 ### 방법 1: Claude Code Plugin Marketplace (추천)
 
+Claude Code에서 다음 명령어를 실행하세요:
+
+```
+/plugin marketplace add dionysus11-source/AA-2026-skills
+/plugin install pdf-to-md@pdf-tools
+```
+
+그 후 터미널에서 의존성을 설치하세요:
+
 ```bash
-# 1. Marketplace 추가
-claude plugin marketplace add YOUR_USERNAME/pdf-to-md-skill
-
-# 2. 스킬 설치
-claude plugin install pdf-to-md@pdf-tools
-
-# 3. 의존성 설치
+# 가상 환경 생성 (권장)
 python3 -m venv ~/.claude/venv
-source ~/.claude/venv/bin/activate  # Windows: ~/.claude/venv\\Scripts\\activate
+source ~/.claude/venv/bin/activate  # Windows: ~/.claude/venv\Scripts\activate
+
+# PyMuPDF4LLM 설치
 pip install pymupdf4llm
 ```
 
@@ -31,8 +36,8 @@ pip install pymupdf4llm
 
 ```bash
 # 1. 리포지토리 클론
-git clone https://github.com/YOUR_USERNAME/pdf-to-md-skill.git
-cd pdf-to-md-skill
+git clone https://github.com/dionysus11-source/AA-2026-skills.git
+cd AA-2026-skills
 
 # 2. Claude Code 스킬 디렉토리로 복사
 # macOS/Linux
@@ -42,18 +47,9 @@ cp -r . ~/.claude/skills/pdf-to-md
 xcopy /E /I . %USERPROFILE%\.claude\skills\pdf-to-md
 
 # 3. 의존성 설치
-
-```bash
-# 가상 환경 생성 (권장)
 python3 -m venv ~/.claude/venv
-source ~/.claude/venv/bin/activate  # Windows: ~/.claude/venv\\Scripts\\activate
-
-# PyMuPDF4LLM 설치
+source ~/.claude/venv/bin/activate  # Windows: ~/.claude/venv\Scripts\activate
 pip install pymupdf4llm
-
-# 또는 다른 라이브러리
-# pip install pdfplumber
-# pip install PyMuPDF
 ```
 
 ## 사용 방법

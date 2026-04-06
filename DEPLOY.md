@@ -43,14 +43,15 @@ git clone https://github.com/YOUR_USERNAME/pdf-to-md-skill.git
 사용자들은 두 가지 방법으로 설치할 수 있습니다:
 
 ### 방법 1: Marketplace (추천)
-```bash
-claude plugin marketplace add YOUR_USERNAME/pdf-to-md-skill
-claude plugin install pdf-to-md@pdf-tools
+Claude Code에서 다음 명령어를 실행:
+```
+/plugin marketplace add dionysus11-source/AA-2026-skills
+/plugin install pdf-to-md@pdf-tools
 ```
 
 ### 방법 2: Git Clone
 ```bash
-git clone https://github.com/YOUR_USERNAME/pdf-to-md-skill.git
+git clone https://github.com/dionysus11-source/AA-2026-skills.git
 ```
 
 상세 사용법은 README.md에 설명되어 있습니다.
