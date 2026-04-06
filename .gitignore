@@ -15,9 +15,12 @@ ENV/
 .DS_Store
 
 # Test outputs
-*.md
+# *.md  # 주석 처리 - README.md, SKILL.md 등은 포함해야 함
 images/
 *.pdf
+!README.md
+!SKILL.md
+!DEPLOY.md
 
 # IDE
 .vscode/

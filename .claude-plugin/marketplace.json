@@ -1,0 +1,10 @@
+{
+  "name": "pdf-tools",
+  "plugins": [
+    {
+      "name": "pdf-to-md",
+      "source": "./",
+      "description": "PDF 문서를 Markdown으로 변환합니다. 텍스트, 이미지, 표, 리스트 등의 구조를 유지하며 변환하고 한글/영문을 완벽하게 지원합니다."
+    }
+  ]
+}
