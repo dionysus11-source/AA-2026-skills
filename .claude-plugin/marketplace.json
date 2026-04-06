@@ -1,4 +1,7 @@
 {
+  "owner": {
+    "username": "dionysus11-source"
+  },
   "name": "pdf-tools",
   "plugins": [
     {
